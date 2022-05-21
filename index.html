@@ -19,6 +19,9 @@
         html{
             font-family: "Roboto", sans-serif;
         }
+        .top_100-8{
+            top: calc(100% + 8px);
+        }
         .avt ul{
             transform-origin: top right;
             animation: scale ease-in 0.1s;
@@ -98,6 +101,12 @@
             }
         }
         @media screen and (min-width: 741px) and (max-width: 1070px){
+            .postWriter{
+                width: 70%;
+            }
+            .postListWrapper{
+                width: 70%;
+            }
             .textFooterCenter{
                 display: none;
             }
@@ -116,6 +125,15 @@
             }
             .container{
                 height: 100vh;
+            }
+            .postWriter{
+                width: 100%;
+            }
+            .postListWrapper{
+                width: 100%;
+            }
+            .bodyWrapper{
+                padding: 0 8px;
             }
         }
         @media screen and (max-width: 320px){
@@ -243,8 +261,8 @@
                 </div>
             </div>
         </div>
-        <div class="max-w-[1092px] w-[100%] mx-auto flex flex-col items-center">
-            <div class="bg-[#353945] w-[50%] px-[10px] py-[10px] rounded-[8px]">
+        <div class="max-w-[1092px] w-[100%] mx-auto flex flex-col items-center bodyWrapper">
+            <div class="bg-[#353945] w-[50%] px-[10px] py-[10px] rounded-[8px] postWriter">
                 <div class="flex items-center postInputWrapper flex-wrap">
                     <div class="w-[40px] h-[40px] cursor-pointer">
                         <img class="h-full rounded-[50%] object-cover" src="https://images.unsplash.com/photo-1650902153035-ecee8f4e8bb4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="">
@@ -260,15 +278,15 @@
                     </span>
                     <span class="hover:text-[#fafafa] cursor-pointer flex items-center">
                         <i class="mr-[4px] text-[16px] fa-solid fa-user-tag"></i>
-                        <p>Gắn thẻ bạn bè</p>
+                        <p>Gắn thẻ</p>
                     </span>
                     <span class="hover:text-[#fafafa] cursor-pointer flex items-center">
                         <i class="mr-[4px] text-[16px] fa-solid fa-face-smile-beam"></i>
-                        <p>Cảm xúc/Hoạt động</p>
+                        <p>Cảm xúc</p>
                     </span>
                 </div>
             </div>
-            <div class="w-[50%] ">
+            <div class="w-[50%] postListWrapper">
                 <div class="w-full bg-[#353945] my-[10px] rounded-[8px] px-[10px] py-[10px]">
                     <div class="flex items-center mb-[8px]">
                         <div class="w-[40px] h-[40px] cursor-pointer">
