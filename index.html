@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../tailwind/build/tailwind.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Hurricane&family=Oswald:wght@300;400;500;600;700&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,300&family=Roboto:ital,wght@0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        html{
+            font-family: "Roboto", sans-serif;
+        }
+        .avt ul{
+            transform-origin: top right;
+            animation: scale ease-in 0.1s;
+        }
+        .navIcon ul{
+            animation: scale ease-in 0.1s;
+            transform-origin: top right;
+        }
+        
+        .navIcon:hover ul{
+            display: flex;
+        }
+        
+        @keyframes scale{
+            0%{
+                transform: scale(0);
+            }
+            100%{
+                transform: scale(1);
+            }
+        }
+        .avt:hover ul{
+            display: block;
+        }
+        .avt ul::before{
+            content: "";
+            height: 8px;
+            position: absolute;
+            top: -8px;
+            left: 0;
+            right: 0;
+        }
+        .postReactWrapper::after,
+        .postContentWrapper::after,
+        .postInputWrapper::after{
+            content: "";
+            display: block;
+            width: 100%;
+            background-color: #fff;
+            height: 0.5px;
+            opacity: 0.2;
+            margin: 16px 0;
+        }
+        .postReactWrapper::after{
+            margin-top: 8px;
+            margin-bottom: 16px;
+        }
+        .postContentWrapper::after{
+            margin: 8px 0;
+        }
+        .postInput::placeholder{
+            color: #333;
+        }
+        .commentContent,
+        .postContent{
+            display: -webkit-box;
+            -webkit-line-clamp: 8; 
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+
+        }
+        .commentContent{
+            -webkit-line-clamp: 4; 
+        }
+        @media screen and (max-width: 1070px){
+            .nav{
+                display: none;
+            }
+            .navIcon{
+                display: block;
+            }
+        }
+        @media screen and (min-width: 741px) and (max-width: 1070px){
+            .textFooterCenter{
+                display: none;
+            }
+            .contentFooter{
+                justify-content: space-around;
+            }
+        }
+        @media screen and (max-width: 740px){
+            .searchIcon,
+            .socialFooter,
+            .textFooterCenter{
+                display: none;
+            }
+            .contentFooter{
+                justify-content: center;
+            }
+            .container{
+                height: 100vh;
+            }
+        }
+        @media screen and (max-width: 320px){
+            .avt{
+                margin-left: 8px;
+            }
+            .logoIcon{
+                font-size: 36px;
+            }
+            .logoName{
+                font-size: 32px;
+            }
+            .navIcon{
+                font-size: 32px !important;
+            }
+        }
+        @media screen and (max-width: 280px){
+            .logoIcon{
+                font-size: 36px;
+            }
+            .logoName{
+                font-size: 26px;
+            }
+            .navIcon{
+                font-size: 24px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="pt-[20px] pb-[80px] bg-[#13161B] mt-[96px] relative min-h-[100vh] container">
+        <div class="fixed h-[96px] bg-[#1f232b] top-0 left-0 right-0 z-[999]">
+            <div class="max-w-[1092px] w-[100%] h-full flex items-center justify-between mx-auto">
+                <a href="" class="flex items-center">
+                    <i class="fa-solid fa-atom text-[40px] text-white mr-1 logoIcon"></i>
+                    <span class="font-bold text-[36px] text-white logoName">Chemiscare</span>   
+                </a>
+                <ul class="flex justify-center grow nav">
+                    <li class="">
+                        <a class="p-4 text-[18px] text-[#868991] hover:text-[#d54253]" href="">
+                            <i class="fa-solid fa-file-lines"></i>
+                            <span class="">Diễn Đàn</span>   
+                        </a>
+                    </li>
+                    <li class="">
+                        <a class="p-4 text-[18px] text-[#868991] hover:text-[#d54253]" href="">
+                            <i class="fa-solid fa-calendar"></i>
+                            <span class="">Lịch Thi</span>   
+                        </a>
+                    </li>
+                    <li class="">
+                        <a class="p-4 text-[18px] text-[#868991] hover:text-[#d54253]" href="">
+                            <i class="fa-solid fa-scale-balanced"></i>
+                            <span class="">Thể Lệ</span>   
+                        </a>
+                    </li>
+                    <li class="">
+                        <a class="p-4 text-[18px] text-[#868991] hover:text-[#d54253]" href="">
+                            <i class="fa-solid fa-ranking-star"></i>
+                            <span class="">Xếp Hạng</span>   
+                        </a>
+                    </li>
+                    <li class="">
+                        <a class="p-4 text-[18px] text-[#868991] hover:text-[#d54253]" href="">
+                            <i class="fa-solid fa-circle-question"></i>
+                            <span class="">Hỏi Đáp</span>   
+                        </a>
+                    </li>
+                </ul>
+                <div class="flex items-center">
+                    <i class="fa-solid fa-magnifying-glass text-[#868991] px-5 py-5 cursor-pointer hover:text-[#d54253] text-[18px] searchIcon"></i>
+                    <div class="relative navIcon hidden">
+                        <i class="fa-solid fa-bars text-[30px]  hover:text-[#d54253] text-[#868991]"></i>
+                        <ul class="justify-between grow absolute top-[100%] right-1 flex-col bg-[#3d4048] text-white rounded-[4px] hidden">
+                            <li class="w-[200px]">
+                                <a class="px-6 block py-4 boder-bot hover:text-[#d54253]" href="">
+                                    <i class="text-[18px] fa-solid fa-house"></i>
+                                    <span class="text-sm text-[16px]">Diễn Đàng</span>   
+                                </a>
+                            </li>
+                            <li class="w-[200px]">
+                                <a class="px-6 block py-4 boder-bot hover:text-[#d54253]" href="">
+                                    <i class="text-[18px] fa-solid fa-calendar"></i>
+                                    <span class="text-sm text-[16px]">Lịch Thi</span>   
+                                </a>
+                            </li>
+                            <li class="w-[200px]">
+                                <a class="px-6 block py-4 boder-bot hover:text-[#d54253]" href="">
+                                    <i class="text-[18px] fa-solid fa-scale-balanced"></i>
+                                    <span class="text-sm text-[16px]">Thể Lệ</span>   
+                                </a>
+                            </li>
+                            <li class="w-[200px]">
+                                <a class="px-6 block py-4 hover:text-[#d54253]" href="">
+                                    <i class="text-[18px] fa-solid fa-circle-question"></i>
+                                    <span class="text-sm text-[16px]">Hỏi Đáp</span>   
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- <span class="cursor-pointer px-5 text-[18px] text-[#868991] hover:text-[#d54253]">Đăng nhập</span>
+                    <span class="cursor-pointer px-5 py-[10px] text-[18px] text-[#000] rounded-[9px] bg-white hover:bg-[#fafafa]">Đăng ký</span> -->
+                    <div class="text-white relative cursor-pointer w-[40px] h-[40px] ml-5 bg-[#B8BCC6] rounded-[50%] text-[22px] items-center justify-center flex hover:bg-[#D44253]  avt">
+                        <img src="https://images.unsplash.com/photo-1650902153035-ecee8f4e8bb4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="" class="w-full h-full rounded-[50%] object-cover">
+                        <span class="hidden">S</span>
+                        <ul class="absolute top_100-8 bg-[#3D4048] right-0 text-[18px] px-8 text-white py-4 font-normal rounded-[9px] hidden z-10">
+                            <li class="flex py-2 border-b-[1px] border-[#51535a] border-solid items-center">
+                                <div>
+                                    <span class="cursor-pointer w-[40px] h-[40px] bg-[#D44253] rounded-[50%] text-[22px] items-center justify-center flex font-light mr-1">
+                                        <span class="hidden">S</span>
+                                        <img src="https://images.unsplash.com/photo-1650902153035-ecee8f4e8bb4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="" class="w-full h-full rounded-[50%] object-cover">
+                                    </span>
+                                </div>
+                                <span class="leading-[20px] text-[16px]">
+                                    <span class="hover:text-[#d54253]">Trịnh Văn Sơn</span>
+                                    <span class="cursor-text text-[12px] text-[#868991] overflow-hidden block max-w-[200px] min-w-[150px]">@gmail.com</span>
+                                </span>
+                            </li>
+                            <li class="py-2 hover:text-[#d54253]">Lịch sử</li>
+                            <li class="py-2 hover:text-[#d54253] border-b-[1px] border-[#51535a] border-solid">Xếp hạng của tôi</li>
+
+                            <li class="py-2 hover:text-[#d54253]">Đăng xuất</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="max-w-[1092px] w-[100%] mx-auto flex flex-col items-center">
+            <div class="bg-[#353945] w-[50%] px-[10px] py-[10px] rounded-[8px]">
+                <div class="flex items-center postInputWrapper flex-wrap">
+                    <div class="w-[40px] h-[40px] cursor-pointer">
+                        <img class="h-full rounded-[50%] object-cover" src="https://images.unsplash.com/photo-1650902153035-ecee8f4e8bb4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="">
+                    </div>
+                    <div class="grow ml-[8px] h-[40px]">
+                        <input type="text" placeholder="Sơn ơi, bạn đang nghĩ gì thế?" class="w-full px-[10px] h-full rounded-[30px] text-[16px] bg-[#fafafa] outline-none text-[#333] postInput">
+                    </div>
+                </div>
+                <div class="flex justify-evenly text-[#B0B3B8]">
+                    <span class="hover:text-[#fafafa] cursor-pointer flex items-center">
+                        <i class="mr-[4px] text-[16px] fa-solid fa-images"></i>
+                        <p>Ảnh/Video</p>
+                    </span>
+                    <span class="hover:text-[#fafafa] cursor-pointer flex items-center">
+                        <i class="mr-[4px] text-[16px] fa-solid fa-user-tag"></i>
+                        <p>Gắn thẻ bạn bè</p>
+                    </span>
+                    <span class="hover:text-[#fafafa] cursor-pointer flex items-center">
+                        <i class="mr-[4px] text-[16px] fa-solid fa-face-smile-beam"></i>
+                        <p>Cảm xúc/Hoạt động</p>
+                    </span>
+                </div>
+            </div>
+            <div class="w-[50%] ">
+                <div class="w-full bg-[#353945] my-[10px] rounded-[8px] px-[10px] py-[10px]">
+                    <div class="flex items-center mb-[8px]">
+                        <div class="w-[40px] h-[40px] cursor-pointer">
+                            <img class="h-full rounded-[50%] object-cover" src="https://images.unsplash.com/photo-1650902153035-ecee8f4e8bb4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="">
+                        </div>
+                        <span class="text-white flex flex-col ml-[4px]">
+                            <span>THEANH28</span>
+                            <span class="font-light text-[#B0B3B8] text-[12px]"><i class="fa-solid fa-clock mr-[2px]"></i>13 phút trước</span>
+                        </span>
+                    </div>
+                    <div>
+                        <div class="mb-[8px] postContentWrapper">
+                            <div class="">
+                                <p class="text-white text-[14px] postContent">NÓNG: NGAY LÚC NÀY TẠI GIẢI PHÓNG VÀ CHÙA BỘC Ở HÀ NỘI, GHI NHẬN RẤT NHIỀU NGƯỜI ĐANG TẬP TRUNG HÓNG HỚT 2 SỰ KIỆN HOT NHẤT HÔM NAY 
+                                    Thời tiết Hà Nội lúc này đang khá âm u, trời như có vẻ chuẩn bị đón 1 cơn mưa lớn nhưng không vì thế làm nản chí sự hóng hớt của nhiều người dân. 
+                                    Theo ghi nhận của các hóng hớt viên thì tại Giải Phóng và Chùa Bộc lúc này ở Hà Nội đang tập trung khá nhiều người.
+                                    Ngay lập tức chúng tôi đã tới để tìm hiểu sự việc thì phát hiện ra, hóa ra hôm nay shop thời trang 5S Fashion chính thức khai trương 2 cơ sở tại Hà Nội là 809 Giải Phóng và 269 Chùa Bộc. 
+                                    Tiện thể nên chúng tôi đã xâm nhập vào bên trong, thì được biết shop đang có rất nhiều chương trình ưu đãi như tặng quà miễn phí cho tất cả khách hàng tới tham gia khai trương, giảm 30-50% toàn bộ sản phẩm. Bảo sao mọi người tập trung đông như quân Nguyên đến thế. Chỉ duy nhất trong ngày hôm nay thôi nên anh em tới băm hàng nhanh còn kịp đi nào =)))
+                                </p>
+                                <p class="text-[#B0B3B8] text-[14px] font-semibold hover:text-[#fafafa] hover:underline cursor-pointer">Xem thêm</p>
+                            </div>
+                            <div class="rounded-[8px] overflow-hidden mb-[8px]">
+                                <img src="https://scontent.fhan5-8.fna.fbcdn.net/v/t39.30808-6/282171016_6130717986974070_1754180547912841391_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=730e14&_nc_ohc=qxPnuwg7GQgAX_yUIka&_nc_ht=scontent.fhan5-8.fna&oh=00_AT__W6fUgN-0zWHqmYpO47cuWkDmHhq2PtNEMLozfEYxQw&oe=628DC619" alt="">
+                            </div>
+                            <div class="flex justify-between text-[#B0B3B8] text-[14px] cursor-default">
+                                <span><i class=" mr-[4px] fa-solid fa-thumbs-up"></i>1,6K</span>
+                                <div>
+                                    <span class="mr-[8px]"><i class=" mr-[4px] fa-solid fa-comment"></i>240</span>
+                                    <span><i class=" mr-[4px] fa-solid fa-share"></i>4</span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="postReactWrapper">
+                            <div class="text-[#B0B3B8] text-[18px] flex justify-around">
+                                <span class="cursor-pointer hover:text-[#fafafa]"><i class=" mr-[4px] fa-solid fa-thumbs-up"></i>Thích</span>
+                                <span class="cursor-pointer hover:text-[#fafafa]"><i class=" mr-[4px] fa-solid fa-comment"></i>Bình luận</span>
+                                <span class="cursor-pointer hover:text-[#fafafa]"><i class=" mr-[4px] fa-solid fa-share"></i>Chia sẻ</span>
+                            </div>
+                        </div>
+                        <div>
+                            <div class="flex items-center flex-wrap mb-[8px]">
+                                <div class="w-[30px] h-[30px] cursor-pointer">
+                                    <img class="h-full rounded-[50%] object-cover" src="https://images.unsplash.com/photo-1650902153035-ecee8f4e8bb4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="">
+                                </div>
+                                <div class="grow ml-[8px] h-[30px]">
+                                    <input type="text" placeholder="Bình luận công khai..." class="w-full px-[10px] h-full rounded-[30px] text-[14px] bg-[#fafafa] outline-none text-[#333] postInput">
+                                </div>
+                            </div>
+                            <div class="flex">
+                                <div class="mr-[8px]">
+                                    <div class="w-[30px] h-[30px] cursor-pointer">
+                                        <img class="h-full rounded-[50%] object-cover" src="https://images.unsplash.com/photo-1650902153035-ecee8f4e8bb4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="">
+                                    </div>
+                                </div>
+                                <div class="text-white text-[13px] bg-[#4a4d58] px-[10px] py-[8px] rounded-[8px]">
+                                    <div class="font-semibold">Phúc Thanh</div>
+                                    <div class="text-[14px] commentContent">
+                                        Ngay lập tức chúng tôi đã tới để tìm hiểu sự việc thì phát hiện ra, hóa ra hôm nay shop thời trang 5S Fashion chính thức khai trương 2 cơ sở tại Hà Nội là 809 Giải Phóng và 269 Chùa Bộc. Ngay lập tức chúng tôi đã tới để tìm hiểu sự việc thì phát hiện ra, hóa ra hôm nay shop thời trang 5S Fashion chính thức khai trương 2 cơ sở tại Hà Nội là 809 Giải Phóng và 269 Chùa Bộc. 
+
+                                    </div>
+                                    <p class="text-[#B0B3B8] text-[14px] font-semibold hover:text-[#fafafa] hover:underline cursor-pointer">Xem thêm</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="py-[20px] bg-[#16191f] absolute bottom-0 left-0 right-0 border-[#353945] border-t-[1px] text-[#777e90]">
+            <div class="mx-auto max-w-[1092px] w-[100%] flex justify-between items-center contentFooter">
+                <span class="text-[14px] font-light">Copyright © 2022  - <a href="" class="underline">SownVipro</a> & <a href="" class="underline">TCODEDAO</a></span>
+                <span class="textFooterCenter"><span class="font-light">Sản phẩm thuộc</span> NHÓM HỌC SINH LỚP 8A TRƯỜNG THCS AN SINH</span>
+                <span class="flex justify-between socialFooter">
+                    <a href="" class="pr-[8px]"><img class="w-[24px] h-[24px]" src="https://tek4.vn/icons/facebook-footer-icon.svg" alt=""></a>
+                    <a href="" class="px-[8px]"><img class="w-[24px] h-[24px]" src="https://tek4.vn/icons/twitter-footer-icon.svg" alt=""></a>
+                    <a href="" class="px-[8px]"><img class="w-[24px] h-[24px]" src="https://tek4.vn/icons/instagram-footer-icon.svg" alt=""></a>
+                    <a href="" class="px-[8px]"><i class="fa-brands fa-google-plus-g text-[24px]"></i></a>
+                    <a href="" class="pl-[8px]"><i class="fa-brands fa-github text-[24px]"></i></a>
+                </span>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
