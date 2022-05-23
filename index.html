@@ -56,7 +56,7 @@
         }
         .postReactWrapper::after,
         .postContentWrapper::after,
-        .postInputWrapper::after{
+        .postWriter::after{
             content: "";
             display: block;
             width: 100%;
@@ -101,7 +101,7 @@
             }
         }
         @media screen and (min-width: 741px) and (max-width: 1070px){
-            .postWriter{
+            .postWriterWrapper{
                 width: 70%;
             }
             .postListWrapper{
@@ -126,7 +126,7 @@
             .container{
                 height: 100vh;
             }
-            .postWriter{
+            .postWriterWrapper{
                 width: 100%;
             }
             .postListWrapper{
@@ -134,6 +134,10 @@
             }
             .bodyWrapper{
                 padding: 0 8px;
+            }
+            .commentTime{
+                margin: 0;
+                display: block;
             }
         }
         @media screen and (max-width: 320px){
@@ -149,6 +153,9 @@
             .navIcon{
                 font-size: 32px !important;
             }
+            .postReact{
+                justify-content: space-between;
+            }
         }
         @media screen and (max-width: 280px){
             .logoIcon{
@@ -159,6 +166,15 @@
             }
             .navIcon{
                 font-size: 24px !important;
+            }
+            .postWriterAdd{
+                font-size: 13px;
+            }
+            .postReact{
+                font-size: 14px;
+            }
+            .postInf{
+                font-size: 12px;
             }
         }
     </style>
@@ -262,25 +278,27 @@
             </div>
         </div>
         <div class="max-w-[1092px] w-[100%] mx-auto flex flex-col items-center bodyWrapper">
-            <div class="bg-[#353945] w-[50%] px-[10px] py-[10px] rounded-[8px] postWriter">
-                <div class="flex items-center postInputWrapper flex-wrap">
-                    <div class="w-[40px] h-[40px] cursor-pointer">
-                        <img class="h-full rounded-[50%] object-cover" src="https://images.unsplash.com/photo-1650902153035-ecee8f4e8bb4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="">
-                    </div>
-                    <div class="grow ml-[8px] h-[40px]">
-                        <input type="text" placeholder="Sơn ơi, bạn đang nghĩ gì thế?" class="w-full px-[10px] h-full rounded-[30px] text-[16px] bg-[#fafafa] outline-none text-[#333] postInput">
+            <div class="bg-[#353945] w-[50%] px-[10px] py-[10px] rounded-[8px] postWriterWrapper">
+                <div class="postWriter flex-wrap">
+                    <div class="flex items-center">
+                        <div class="w-[40px] h-[40px] cursor-pointer">
+                            <img class="h-full rounded-[50%] object-cover" src="https://images.unsplash.com/photo-1650902153035-ecee8f4e8bb4?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80" alt="">
+                        </div>
+                        <div class="grow ml-[8px] h-[40px] postInputWrapper">
+                            <input type="text" placeholder="Sơn ơi, bạn đang nghĩ gì thế..?" class="w-full px-[10px] h-full rounded-[30px] text-[16px] bg-[#fafafa] outline-none text-[#333] postInput">
+                        </div>
                     </div>
                 </div>
                 <div class="flex justify-evenly text-[#B0B3B8]">
-                    <span class="hover:text-[#fafafa] cursor-pointer flex items-center">
+                    <span class="hover:text-[#fafafa] cursor-pointer flex items-center postWriterAdd">
                         <i class="mr-[4px] text-[16px] fa-solid fa-images"></i>
                         <p>Ảnh/Video</p>
                     </span>
-                    <span class="hover:text-[#fafafa] cursor-pointer flex items-center">
+                    <span class="hover:text-[#fafafa] cursor-pointer flex items-center postWriterAdd">
                         <i class="mr-[4px] text-[16px] fa-solid fa-user-tag"></i>
                         <p>Gắn thẻ</p>
                     </span>
-                    <span class="hover:text-[#fafafa] cursor-pointer flex items-center">
+                    <span class="hover:text-[#fafafa] cursor-pointer flex items-center postWriterAdd">
                         <i class="mr-[4px] text-[16px] fa-solid fa-face-smile-beam"></i>
                         <p>Cảm xúc</p>
                     </span>
@@ -299,7 +317,7 @@
                     </div>
                     <div>
                         <div class="mb-[8px] postContentWrapper">
-                            <div class="">
+                            <div class="mb-[8px]">
                                 <p class="text-white text-[14px] postContent">NÓNG: NGAY LÚC NÀY TẠI GIẢI PHÓNG VÀ CHÙA BỘC Ở HÀ NỘI, GHI NHẬN RẤT NHIỀU NGƯỜI ĐANG TẬP TRUNG HÓNG HỚT 2 SỰ KIỆN HOT NHẤT HÔM NAY 
                                     Thời tiết Hà Nội lúc này đang khá âm u, trời như có vẻ chuẩn bị đón 1 cơn mưa lớn nhưng không vì thế làm nản chí sự hóng hớt của nhiều người dân. 
                                     Theo ghi nhận của các hóng hớt viên thì tại Giải Phóng và Chùa Bộc lúc này ở Hà Nội đang tập trung khá nhiều người.
@@ -311,7 +329,7 @@
                             <div class="rounded-[8px] overflow-hidden mb-[8px]">
                                 <img src="https://scontent.fhan5-8.fna.fbcdn.net/v/t39.30808-6/282171016_6130717986974070_1754180547912841391_n.jpg?_nc_cat=110&ccb=1-7&_nc_sid=730e14&_nc_ohc=qxPnuwg7GQgAX_yUIka&_nc_ht=scontent.fhan5-8.fna&oh=00_AT__W6fUgN-0zWHqmYpO47cuWkDmHhq2PtNEMLozfEYxQw&oe=628DC619" alt="">
                             </div>
-                            <div class="flex justify-between text-[#B0B3B8] text-[14px] cursor-default">
+                            <div class="flex justify-between text-[#B0B3B8] text-[14px] cursor-default postInf">
                                 <span><i class=" mr-[4px] fa-solid fa-thumbs-up"></i>1,6K</span>
                                 <div>
                                     <span class="mr-[8px]"><i class=" mr-[4px] fa-solid fa-comment"></i>240</span>
@@ -320,7 +338,7 @@
                             </div>
                         </div>
                         <div class="postReactWrapper">
-                            <div class="text-[#B0B3B8] text-[18px] flex justify-around">
+                            <div class="text-[#B0B3B8] text-[18px] flex justify-around postReact">
                                 <span class="cursor-pointer hover:text-[#fafafa] liked"><i class=" mr-[4px] fa-solid fa-thumbs-up"></i>Thích</span>
                                 <span class="cursor-pointer hover:text-[#fafafa]"><i class=" mr-[4px] fa-solid fa-comment"></i>Bình luận</span>
                                 <span class="cursor-pointer hover:text-[#fafafa]"><i class=" mr-[4px] fa-solid fa-share"></i>Chia sẻ</span>
@@ -344,7 +362,7 @@
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="text-white text-[13px] bg-[#4a4d58] px-[10px] py-[8px] rounded-[8px]">
+                                            <div class="text-white text-[13px] bg-[#424757] px-[10px] py-[8px] rounded-[8px]">
                                                 <div class="font-semibold">Phúc Thanh</div>
                                                 <div class="text-[14px] commentContent">
                                                     Ngay lập tức chúng tôi đã tới để tìm hiểu sự việc thì phát hiện ra, hóa ra hôm nay shop thời trang 5S Fashion chính thức khai trương 2 cơ sở tại Hà Nội là 809 Giải Phóng và 269 Chùa Bộc. Ngay lập tức chúng tôi đã tới để tìm hiểu sự việc thì phát hiện ra, hóa ra hôm nay shop thời trang 5S Fashion chính thức khai trương 2 cơ sở tại Hà Nội là 809 Giải Phóng và 269 Chùa Bộc. 
@@ -356,7 +374,7 @@
                                                 <div>
                                                     <span class="font-semibold cursor-pointer hover:text-[#fafafa] liked">Thích</span>
                                                     <span class="font-semibold cursor-pointer hover:text-[#fafafa] ml-[8px]">Phản hồi</span>
-                                                    <span class="ml-[8px] cursor-default">20 phút trước</span>
+                                                    <span class="ml-[8px] cursor-default commentTime">20 phút trước</span>
                                                 </div>
                                                 <span class="font-semibold cursor-default">280 lượt thích</span>
                                             </div>
@@ -374,7 +392,7 @@
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="text-white text-[13px] bg-[#4a4d58] px-[10px] py-[8px] rounded-[8px]">
+                                            <div class="text-white text-[13px] bg-[#424757] px-[10px] py-[8px] rounded-[8px]">
                                                 <div class="font-semibold">Phúc Thanh</div>
                                                 <div class="text-[14px] commentContent">
                                                     Ngay lập tức chúng tôi đã tới để tìm hiểu sự việc thì phát hiện ra, hóa ra hôm nay shop thời trang 5S Fashion chính thức khai trương 2 cơ sở tại Hà Nội là 809 Giải Phóng và 269 Chùa Bộc. Ngay lập tức chúng tôi đã tới để tìm hiểu sự việc thì phát hiện ra, hóa ra hôm nay shop thời trang 5S Fashion chính thức khai trương 2 cơ sở tại Hà Nội là 809 Giải Phóng và 269 Chùa Bộc. 
@@ -386,7 +404,7 @@
                                                 <div>
                                                     <span class="font-semibold cursor-pointer hover:text-[#fafafa]">Thích</span>
                                                     <span class="font-semibold cursor-pointer hover:text-[#fafafa] ml-[8px]">Phản hồi</span>
-                                                    <span class="ml-[8px] cursor-default">20 phút trước</span>
+                                                    <span class="ml-[8px] cursor-default commentTime">20 phút trước</span>
                                                 </div>
                                                 <span class="font-semibold cursor-default">280 lượt thích</span>
                                             </div>
@@ -400,7 +418,7 @@
                                                         </div>
                                                     </div>
                                                     <div>
-                                                        <div class="text-white text-[13px] bg-[#4a4d58] px-[10px] py-[8px] rounded-[8px]">
+                                                        <div class="text-white text-[13px] bg-[#424757] px-[10px] py-[8px] rounded-[8px]">
                                                             <div class="font-semibold">Phúc Thanh</div>
                                                             <div class="text-[14px] commentContent">
                                                                 Ngay lập tức chúng tôi đã tới để tìm hiểu sự việc thì phát hiện ra, hóa ra hôm nay shop thời trang 5S Fashion chính thức khai trương 2 cơ sở tại Hà Nội là 809 Giải Phóng và 269 Chùa Bộc. Ngay lập tức chúng tôi đã tới để tìm hiểu sự việc thì phát hiện ra, hóa ra hôm nay shop thời trang 5S Fashion chính thức khai trương 2 cơ sở tại Hà Nội là 809 Giải Phóng và 269 Chùa Bộc. 
@@ -412,7 +430,7 @@
                                                             <div>
                                                                 <span class="font-semibold cursor-pointer hover:text-[#fafafa]">Thích</span>
                                                                 <span class="font-semibold cursor-pointer hover:text-[#fafafa] ml-[8px]">Phản hồi</span>
-                                                                <span class="ml-[8px] cursor-default">20 phút trước</span>
+                                                                <span class="ml-[8px] cursor-default commentTime">20 phút trước</span>
                                                             </div>
                                                             <span class="font-semibold cursor-default">280 lượt thích</span>
                                                         </div>
@@ -426,7 +444,7 @@
                                                         </div>
                                                     </div>
                                                     <div>
-                                                        <div class="text-white text-[13px] bg-[#4a4d58] px-[10px] py-[8px] rounded-[8px]">
+                                                        <div class="text-white text-[13px] bg-[#424757] px-[10px] py-[8px] rounded-[8px]">
                                                             <div class="font-semibold">Phúc Thanh</div>
                                                             <div class="text-[14px] commentContent">
                                                                 Ngay lập tức chúng tôi đã tới để tìm hiểu sự việc thì phát hiện ra, hóa ra hôm nay shop thời trang 5S Fashion chính thức khai trương 2 cơ sở tại Hà Nội là 809 Giải Phóng và 269 Chùa Bộc. Ngay lập tức chúng tôi đã tới để tìm hiểu sự việc thì phát hiện ra, hóa ra hôm nay shop thời trang 5S Fashion chính thức khai trương 2 cơ sở tại Hà Nội là 809 Giải Phóng và 269 Chùa Bộc. 
@@ -438,7 +456,7 @@
                                                             <div>
                                                                 <span class="font-semibold cursor-pointer hover:text-[#fafafa]">Thích</span>
                                                                 <span class="font-semibold cursor-pointer hover:text-[#fafafa] ml-[8px]">Phản hồi</span>
-                                                                <span class="ml-[8px] cursor-default">20 phút trước</span>
+                                                                <span class="ml-[8px] cursor-default commentTime">20 phút trước</span>
                                                             </div>
                                                             <span class="font-semibold cursor-default">280 lượt thích</span>
                                                         </div>
@@ -457,7 +475,7 @@
                                             </div>
                                         </div>
                                         <div>
-                                            <div class="text-white text-[13px] bg-[#4a4d58] px-[10px] py-[8px] rounded-[8px]">
+                                            <div class="text-white text-[13px] bg-[#424757] px-[10px] py-[8px] rounded-[8px]">
                                                 <div class="font-semibold">Phúc Thanh</div>
                                                 <div class="text-[14px] commentContent">
                                                     Ngay lập tức chúng tôi đã tới để tìm hiểu sự việc thì phát hiện ra, hóa ra hôm nay shop thời trang 5S Fashion chính thức khai trương 2 cơ sở tại Hà Nội là 809 Giải Phóng và 269 Chùa Bộc. Ngay lập tức chúng tôi đã tới để tìm hiểu sự việc thì phát hiện ra, hóa ra hôm nay shop thời trang 5S Fashion chính thức khai trương 2 cơ sở tại Hà Nội là 809 Giải Phóng và 269 Chùa Bộc. 
@@ -469,7 +487,7 @@
                                                 <div>
                                                     <span class="font-semibold cursor-pointer hover:text-[#fafafa]">Thích</span>
                                                     <span class="font-semibold cursor-pointer hover:text-[#fafafa] ml-[8px]">Phản hồi</span>
-                                                    <span class="ml-[8px] cursor-default">20 phút trước</span>
+                                                    <span class="ml-[8px] cursor-default commentTime">20 phút trước</span>
                                                 </div>
                                                 <span class="font-semibold cursor-default">280 lượt thích</span>
                                             </div>
